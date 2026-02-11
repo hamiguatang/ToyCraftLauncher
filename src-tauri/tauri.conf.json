@@ -14,8 +14,12 @@
       {
         "title": "toycraftlauncher",
         "decorations": true,
+        "center": true,
+        "resizable": false,
         "width": 800,
-        "height": 600
+        "height": 600,
+        "transparent": false,
+        "maximizable": false
       }
     ],
     "security": {
