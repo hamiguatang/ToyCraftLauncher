@@ -99,7 +99,7 @@ npm run tauri build
         +-----------------+-----------------+
         |                 |                 |
         v                 v                 v
-    Windows             iOS             Android
+    Windows             Linux             Android
 ```
 
 ## 功能模块
@@ -107,7 +107,7 @@ npm run tauri build
 | 模块 | 功能 | 关键技术 |
 |------|------|----------|
 | 版本管理 | 获取版本列表、下载版本、安装、删除 | Mojang API + BMCLAPI |
-| 账户系统 | 正版登录(Yggdrasil)、外置登录、离线模式 | OAuth2 / 离线模式 |
+| 账户系统 | 正版登录、外置登录(Yggdrasil)、离线模式 | OAuth2 / 离线模式 |
 | 游戏启动 | 构建参数、启动进程、进程监控 | std::process::Command |
 | 资源管理 | Mod/整合包搜索、下载、安装 | CurseForge API + Modrinth API |
 | 配置管理 | 启动器配置、游戏配置 | JSON 序列化 |
@@ -115,7 +115,7 @@ npm run tauri build
 ## 开发阶段
 
 ### 第一阶段：基础框架搭建
-- 配置 Tauri 2 移动端支持 (iOS/Android)
+- 配置 Tauri 2 移动端支持 (Android)
 - 搭建 Vue 3 前端项目结构
 - 实现 Rust 核心库基础架构
 
@@ -132,7 +132,7 @@ npm run tauri build
 
 ### 第四阶段：三端适配
 - Windows 端优化
-- iOS 端适配
+- Linux 端适配
 - Android 端适配
 
 ## API 对接
@@ -141,15 +141,9 @@ npm run tauri build
 |------|-----|------|
 | Mojang | launchermeta.mojang.com | 游戏版本元数据 |
 | BMCLAPI | bmclapi2.bangbang93.com | 国内镜像源 |
-| Yggdrasil | authserver.mojang.com | 正版登录 |
+| Yggdrasil | authserver.mojang.com | 三方登录 |
 | CurseForge | api.curseforge.com | Mod 下载 |
 | Modrinth | api.modrinth.com | Mod 下载 |
-
-## 注意事项
-
-1. 移动端限制：iOS 无法直接运行 Java，需用服务器方案或纯 Rust 实现
-2. 网络环境：移动端需要考虑网络状态处理
-3. 存储空间：移动端存储有限，需要清理功能
 
 ## 开发说明
 
